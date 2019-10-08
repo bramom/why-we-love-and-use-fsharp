@@ -5,8 +5,11 @@
 - transition : default
 
 ***
+<!-- <p style="text-align:left">
+    <img src="/images/hexagon.png" style="background: transparent; border-style: none;"  />
+</p> -->
 
-## Why we love and use F#
+## <img src="/images/hexagon.png" style="background: transparent; border-style: none; vertical-align: middle;"  /> Why we love and use F#
 <br />
 <br />
 <br />
@@ -15,9 +18,12 @@ Branimir Momčilović
 branimir.momcilovic@gmail.com  
 [azbooky software](https://azbooky.com/)  
 
+' Dolazim iz azbooky software, male Beogradske softverske kuće. 2015 godine smo se okupili sa ciljem da razvijemo softversko rešenje za Američku Limo industriju. Što nam je i uspelo, naš dispatching sistem koristi jedan od najvećih prevoznika u NY, na istočnoj obali. Od početka smo koristi F# za gotovo sav backend razvoj, u početku sa idejom da ubrzamo razvoj PoC rešenja, ali nam se toliko svideo da smo i na dalje nastavili da koristimo F# i sve i više uključujemo tooling F# zajednice u naše projekte. Imamo dva veća projekta napisana u F#, dispatching i pripadajući servisi su na .NET framework-u 4.7 i rade na windows OS, a drugi projekat je deo za prihvatanje bukinga i on je .NET core, i radi na linuxu, tj. u dokeru.
+
+
 ***
 
-### Why you should learn F#
+### Agenda
 
 * Motivation: Should I learn a new programming language?
 * Why F#
@@ -27,6 +33,9 @@ branimir.momcilovic@gmail.com
  * Community (samples, 3rd-party libraries)
 * Questions?
 
+' Pokušaću da prenesem utiske posle više od 4 godina korišćenja F# u našem timu. Pre svega na neku svakodnevnu upotrebu u jednom u početku start up okruženju, sa ne najbolje definisanim zahtevima i kratkim budžetom, a kasnije i onboardingom novih ljudi i održavanjem softvera koji je već nekoliko godina u produkciji. Bilo bi još bolje da su tu kolege iz azbookija sa mnom, pre svega Dragan Jovanović, koji je aktivan i u OS zajednici i svakako bolji F# programer od mene.
+Ova prezentacija je nastala iz malog internog treninga za nove kolege i neobaveznih razgovora o tome koliko sam programski jezik utiče na razvoj softvera i način na koji razmišljamo, tj. u našem slučaju možda preciznije način na koji modelujemo biznis procese.
+Znači nema visoke matematike, ni nekih preterano naprednih tehnika funkcionalnog programiranja, iz jednostavnog razloga što ih ja nisam dovoljno savladao da bih o njima govorio :)
 ***
 
 ### Why I should learn a new programming language?
@@ -39,7 +48,7 @@ branimir.momcilovic@gmail.com
 <br />    
 Learn at least one new language every year. 
 
-' Different languages solve the same problems in different ways. 
+' Different languages solve the same problems in different ways.
 ' By learning several different approaches, you can help broaden your thinking and avoid getting stuck in a rut.
 ' Additionally, learning many languages is far easier now, thanks to the wealth of freely available software on the Internet.  
 
@@ -145,7 +154,7 @@ F# is designed as a hybrid functional/OO language, so it can do virtually everyt
 
 ### Let's start
 
-* Basics 
+* Basics
  * F# interactive
  * FSX file(s)
 * 5C examples

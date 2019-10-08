@@ -6,6 +6,9 @@
 #r "Suave.dll"
 
 #load "fsreveal.fsx"
+// #if !FAKE
+//   #r "Facades/netstandard"
+// #endif
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
@@ -57,8 +60,10 @@ let copyPics() =
     with
     | exn -> traceImportant <| sprintf "Could not copy picture: %s" exn.Message
 
-let generateFor (file:FileInfo) = 
+
+let generateFor (file:FileInfo) =
     try
+        CopyFile (outDir </> "favicon.ico") (slidesDir </> "favicon.ico")
         copyPics()
         let rec tryGenerate trials =
             try

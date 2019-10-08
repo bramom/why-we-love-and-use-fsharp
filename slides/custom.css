@@ -1,1 +1,15 @@
+/* div.reveal {
+    background-image: url("../images/hexagon.png"), url("../images/hexagon.png");
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+} */
+
+div.slides {
+    background-image: url("../images/sinergija19.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+
 p { text-align: left; }
+p.right { text-align: right; }
