@@ -18,8 +18,7 @@ Branimir Momčilović
 branimir.momcilovic@gmail.com  
 [azbooky software](https://azbooky.com/)  
 
-' Dolazim iz azbooky software, male Beogradske softverske kuće. 2015 godine smo se okupili sa ciljem da razvijemo softversko rešenje za Američku Limo industriju. Što nam je i uspelo, naš dispatching sistem koristi jedan od najvećih prevoznika u NY, na istočnoj obali. Od početka smo koristi F# za gotovo sav backend razvoj, u početku sa idejom da ubrzamo razvoj PoC rešenja, ali nam se toliko svideo da smo i na dalje nastavili da koristimo F# i sve i više uključujemo tooling F# zajednice u naše projekte. Imamo dva veća projekta napisana u F#, dispatching i pripadajući servisi su na .NET framework-u 4.7 i rade na windows OS, a drugi projekat je deo za prihvatanje bukinga i on je .NET core, i radi na linuxu, tj. u dokeru.
-
+' Dolazim iz azbooky software, Beogradske softverske kuće. 2015 godine smo se okupili sa ciljem da razvijemo softversko rešenje za Američku Limo industriju. Što nam je i uspelo, naš dispatching sistem koristi jedan od najvećih prevoznika u NY, na istočnoj obali. Od početka smo koristi F# za gotovo sav backend razvoj, u početku sa idejom da ubrzamo razvoj PoC rešenja, ali nam se toliko svideo da smo i na dalje nastavili da koristimo F# i sve i više uključujemo tooling F# zajednice u naše projekte. Imamo dva veća projekta napisana u F#, dispatching i pripadajući servisi su na .NET framework-u 4.7 i rade na windows OS, a drugi projekat je deo za prihvatanje bukinga i on je .NET core, i radi na linuxu, tj. u dokeru.
 
 ***
 
@@ -27,15 +26,16 @@ branimir.momcilovic@gmail.com
 
 * Motivation: Should I learn a new programming language?
 * Why F#
+ * It's a part of .NET Core
  * The language itself is amazing
  * The tooling capabilities (IDE integration)
- * The library/framework
  * Community (samples, 3rd-party libraries)
+ * Any issues?
 * Questions?
 
 ' Pokušaću da prenesem utiske posle više od 4 godina korišćenja F# u našem timu. Pre svega na neku svakodnevnu upotrebu u jednom u početku start up okruženju, sa ne najbolje definisanim zahtevima i kratkim budžetom, a kasnije i onboardingom novih ljudi i održavanjem softvera koji je već nekoliko godina u produkciji. Bilo bi još bolje da su tu kolege iz azbookija sa mnom, pre svega Dragan Jovanović, koji je aktivan i u OS zajednici i svakako bolji F# programer od mene.
-Ova prezentacija je nastala iz malog internog treninga za nove kolege i neobaveznih razgovora o tome koliko sam programski jezik utiče na razvoj softvera i način na koji razmišljamo, tj. u našem slučaju možda preciznije način na koji modelujemo biznis procese.
-Znači nema visoke matematike, ni nekih preterano naprednih tehnika funkcionalnog programiranja, iz jednostavnog razloga što ih ja nisam dovoljno savladao da bih o njima govorio :)
+' Ova prezentacija je nastala iz malog internog treninga za nove kolege i neobaveznih razgovora o tome koliko sam programski jezik utiče na razvoj softvera i način na koji razmišljamo, tj. u našem slučaju možda preciznije način na koji modelujemo biznis procese. Znači nema visoke matematike, ni nekih preterano naprednih tehnika funkcionalnog programiranja, iz jednostavnog razloga što ih ja nisam dovoljno savladao da bih o njima govorio :)
+
 ***
 
 ### Why I should learn a new programming language?
@@ -74,11 +74,12 @@ Done?
 
 According to the French neurologist and mathematician Stanislas Dehaene, about 50 percent of English speakers can remember all seven numbers.  
 
-Experiments have repeatedly shown that Asian children find it easier to learn to count than Europeans. In one study with Chinese and American 4- and 5-year-olds, the two nationalities performed similarly when learning to count to 12, but the Chinese were about a year ahead with higher numbers. A regular system (of number-words) also makes arithmetic clearer to understand.
+Experiments have repeatedly shown that Asian children find it easier to learn to count than Europeans. A regular system (of number-words) also makes arithmetic clearer to understand.
 
 * [China's Numbers Are Shorter Than Ours by Robert Krulwich](https://www.npr.org/sections/krulwich/2011/07/01/137527742/china-s-unnatural-math-advantage-their-words)
 
 ' If, however, you are a Chinese speaker, you tend to do much better. The average Chinese speaker can memorize nine numbers in this same amount of time.  
+' In one study with Chinese and American 4- and 5-year-olds, the two nationalities performed similarly when learning to count to 12, but the Chinese were about a year ahead with higher numbers.
 
 ---
 
@@ -95,8 +96,6 @@ https://l-lingo.com/free-lessons/en/learn-chinese-mandarin/numbers-1-10.html)
 
 ### Learn, learn and learn
 
-<img src="images/Lenin_learn_poster.jpg" style="background: transparent; border-style: none;"  />
-
 ' Language shapes your way of thinking.
 ' The hypothesis of linguistic relativity holds that the structure of a language affects its speakers' world view or cognition.
 
@@ -104,9 +103,13 @@ https://l-lingo.com/free-lessons/en/learn-chinese-mandarin/numbers-1-10.html)
 
 ### What is F#
 
+<img src="images\Fsharp_Logomark.png" width="15%" height="15%" style="background: transparent; border-style: none; float:left" />
 F# is a mature, open source, cross-platform, functional-first programming language. It empowers users and organizations to tackle complex computing problems with simple, maintainable and robust code.
 <br>
-<br>  
+<br>
+
+---
+
 #### History
 * 2002: F# language design started <br />
   (Developed by Microsoft Research, Don Syme and his team, F is for "Fun")
@@ -123,69 +126,68 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 
 ### Why use F#
 
-* __Conciseness__  
-F# is not cluttered up with coding “noise” such as curly brackets.
-
-* __Convenience__  
-Many common programming tasks are much simpler in F#  
-
-* __Correctness__  
-F# has a powerful type system which prevents many common errors such as null reference exceptions.  
-
-* __Concurrency__  
-Asynchronous programming is very easy, as is parallelism.
-
-* __Completeness__  
-F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do.
-
-[F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/why-use-fsharp/)
-
-' F# is not cluttered up with coding “noise” such as curly brackets, semicolons and so on. You almost never have to specify the type of an object, thanks to a powerful type inference system. And, compared with C#, it generally takes fewer lines of code to solve the same problem.
-
-' Many common programming tasks are much simpler in F#. This includes things like creating and using complex type definitions, doing list processing, comparison and equality, state machines, and much more. Add because functions are first class objects, it is very easy to create powerful and reusable code by creating functions that have other functions as parameters, or that combine existing functions to create new functionality.
-
-' F# has a powerful type system which prevents many common errors such as null reference exceptions. Values are immutable by default, which prevents a large class of errors. In addition, you can often encode business logic using the type system itself in such a way that it is actually impossible to write incorrect code or mix up units of measure, greatly reducing the need for unit tests.
-
-' F# has a number of built-in libraries to help when more than one thing at a time is happening. Asynchronous programming is very easy, as is parallelism. F# also has a built-in actor model, and excellent support for event handling and functional reactive programming. And of course, because data structures are immutable by default, sharing state and avoiding locks is much easier.
-
-' Although it is a functional language at heart, F# does support other styles which are not 100% pure, which makes it much easier to interact with the non-pure world of web sites, databases, other applications, and so on. In particular, F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do. Of course, F# is part of the .NET ecosystem, which gives you seamless access to all the third party .NET libraries and tools. It runs on most platforms, including Linux and smart phones (via Mono). Finally, it is well integrated with Visual Studio, which means you get a great IDE with IntelliSense support, a debugger, and many plug-ins for unit tests, source control, and other development tasks. Or on Linux, you can use the MonoDevelop IDE instead.
+ * It's a part of .NET Core
+ * The language itself is amazing
+ * The tooling capabilities (IDE integration)
+ * The F# community is great!
 
 ---
 
-### Let's start
+### 1. .NET Core SDK includes the F#
 
-* Basics
- * F# interactive
- * FSX file(s)
-* 5C examples
+<img src="images/NETCoreSDK_includes_the_Fsharp.png" style="background: transparent; border-style: none; float: right"  />
 
-' Why were the C# and F# REPLs removed and when/how will it implemented "as a separate tool"?
-' https://github.com/dotnet/cli/issues/3913
 
-***
-### Framework
-
-[Download .NET Core SDK](https://www.microsoft.com/net/download)
-
-* Cross-platform
-* Consistent across architecures
-* Command-line tools
-* Flexible deployment
-* Open source
-* Supported by Microsoft
+' [Download .NET Core SDK](https://www.microsoft.com/net/download)
+' * Cross-platform
+' * Consistent across architecures
+' * Command-line tools
+' * Flexible deployment
+' * Open source
+' * Supported by Microsoft
 
 ' https://docs.microsoft.com/en-us/dotnet/core/about
 ' .NET Core is a cross-platform version of .NET for building websites, services, and console apps.
 
+***
+
+### 2. The language itself is amazing
+
+* Basics
+ * F# interactive
+ * Hello world
+* Domain modeling
+
 ---
 
-### .NET Core SDK includes the F# compiler and F# core library
+### The area it shines is?
 
-<img src="images/NETCoreSDK_includes_the_Fsharp.png" style="background: transparent; border-style: none; float: right"  />
+<img src="images/the_area_it_shines_is_programming.png" style="background: transparent; border-style: none;"  />
 
 ---
 
-### Tooling
+### Basic demo
+
+* 1+2
+
+---
+
+### Hello world project
+
+* [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
+* dotnet new console -lang F#
+* F# console structure: Open, let, etc.
+* Build & publish
+
+---
+
+### Domain modeling
+
+* Discriminated unions
+
+***
+
+### 3. Tooling
 
 * [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
 * Visual Studio
@@ -196,52 +198,24 @@ F# is designed as a hybrid functional/OO language, so it can do virtually everyt
 
 <img src="images/ionide-fsharp.gif" style="background: transparent; border-style: none;"  />
 
----
-
-### Hello World project
-
-* [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
-* dotnet new console -lang F#
-* F# console structure: Open, let, etc.
-* Build & publish   
-
----
-
-### [Fable Mandelbroot](http://fable.io/repl/)
-
-<img src="images/fable-mandelbrot.png" width="75%" height="75%" style="background: transparent; border-style: none;"  />
-
----
-
-### Demo checklist
-* F# interactive
-* F# projects (.fsproj)
-* Fable
-
----
-
-### The area it shines is?
-
-<img src="images/the_area_it_shines_is_programming.png" style="background: transparent; border-style: none;"  />
-
 ***
 
-### The F# community is great
+### 4. The F# community is great
 
-#### Where to start 
+#### Where to start
 * [F# Software Foundation](https://fsharp.org/)
-* [F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/) 
+* [F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/)
 * [F# style guide](http://aka.ms/fsharpstyleguide)
-  
+
 ---
 
-#### Projects 
+#### Projects
 * [FAKE](https://fake.build/) - F# Make
 ' A DSL FOR BUILD TASKS AND MORE
 * [Paket](https://fsprojects.github.io/Paket/)
 ' Paket is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing files directly from Git repositories or any HTTP resource. It enables precise and predictable control over what packages the projects within your application reference.
 * [Fable](http://fable.io/)
-' Fable is an F# to JavaScript compiler powered by Babel, designed to produce readable and standard code. 
+' Fable is an F# to JavaScript compiler powered by Babel, designed to produce readable and standard code.
 * [Giraffe](https://github.com/giraffe-fsharp/Giraffe)
 ' A functional ASP.NET Core micro web framework for building rich web applications.
 * [SAFE stack](https://safe-stack.github.io/)
@@ -262,8 +236,49 @@ F# is designed as a hybrid functional/OO language, so it can do virtually everyt
 
 ---
 
+***
+
+### Checklist
+* It's a good idea to learn a new programming language
+* F# is a great choice
+
+---
+
 ### Thank you!
 
-* Questions?
-* https://github.com/mocosha
-* Thank you again
+* Questions?  
+<br />  
+https://azbooky.com  <br/>
+http://bug.rs  <br/>
+Thank you again
+
+
+<!-- # Five good reaseons why you should consider using F# for your next project
+
+
+* __Conciseness__  
+' F# is not cluttered up with coding “noise” such as curly brackets.
+
+* __Convenience__  
+' Many common programming tasks are much simpler in F#  
+
+* __Correctness__  
+' F# has a powerful type system which prevents many common errors such as null reference exceptions.  
+
+* __Concurrency__  
+' Asynchronous programming is very easy, as is parallelism.
+
+* __Completeness__  
+' F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do.
+
+[F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/why-use-fsharp/)
+
+' F# is not cluttered up with coding “noise” such as curly brackets, semicolons and so on. You almost never have to specify the type of an object, thanks to a powerful type inference system. And, compared with C#, it generally takes fewer lines of code to solve the same problem.
+
+' Many common programming tasks are much simpler in F#. This includes things like creating and using complex type definitions, doing list processing, comparison and equality, state machines, and much more. Add because functions are first class objects, it is very easy to create powerful and reusable code by creating functions that have other functions as parameters, or that combine existing functions to create new functionality.
+
+' F# has a powerful type system which prevents many common errors such as null reference exceptions. Values are immutable by default, which prevents a large class of errors. In addition, you can often encode business logic using the type system itself in such a way that it is actually impossible to write incorrect code or mix up units of measure, greatly reducing the need for unit tests.
+
+' F# has a number of built-in libraries to help when more than one thing at a time is happening. Asynchronous programming is very easy, as is parallelism. F# also has a built-in actor model, and excellent support for event handling and functional reactive programming. And of course, because data structures are immutable by default, sharing state and avoiding locks is much easier.
+
+' Although it is a functional language at heart, F# does support other styles which are not 100% pure, which makes it much easier to interact with the non-pure world of web sites, databases, other applications, and so on. In particular, F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do. Of course, F# is part of the .NET ecosystem, which gives you seamless access to all the third party .NET libraries and tools. It runs on most platforms, including Linux and smart phones (via Mono). Finally, it is well integrated with Visual Studio, which means you get a great IDE with IntelliSense support, a debugger, and many plug-ins for unit tests, source control, and other development tasks. Or on Linux, you can use the MonoDevelop IDE instead. -->
