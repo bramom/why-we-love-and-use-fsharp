@@ -27,10 +27,9 @@ branimir.momcilovic@gmail.com
 * Motivation: Should I learn a new programming language?
 * Why F#
  * It's a part of .NET Core
- * The language itself is amazing
  * The tooling capabilities (IDE integration)
+ * The language itself is amazing
  * Community (samples, 3rd-party libraries)
- * Any issues?
 * Questions?
 
 ' Pokušaću da prenesem utiske posle više od 4 godina korišćenja F# u našem timu. Pre svega na neku svakodnevnu upotrebu u jednom u početku start up okruženju, sa ne najbolje definisanim zahtevima i kratkim budžetom, a kasnije i onboardingom novih ljudi i održavanjem softvera koji je već nekoliko godina u produkciji. Bilo bi još bolje da su tu kolege iz azbookija sa mnom, pre svega Dragan Jovanović, koji je aktivan i u OS zajednici i svakako bolji F# programer od mene.
@@ -104,21 +103,17 @@ https://l-lingo.com/free-lessons/en/learn-chinese-mandarin/numbers-1-10.html)
 ### What is F#
 
 <img src="images\Fsharp_Logomark.png" width="15%" height="15%" style="background: transparent; border-style: none; float:left" />
-F# is a mature, open source, cross-platform, functional-first programming language. It empowers users and organizations to tackle complex computing problems with simple, maintainable and robust code.
-<br>
-<br>
+F# is a functional first programming language that makes it easy to write correct and maintainable code.  
+<br /><br />  
 
----
-
-#### History
 * 2002: F# language design started <br />
   (Developed by Microsoft Research, Don Syme and his team, F is for "Fun")
-* 2005: F# 1.01 released to public
-* 2010: F# is baked into VS 2010
 * 2017: .NET Core includes F# support by default
 
+' Većina nas koristi više različitih programskih jezika svakodnevno. Klasifikacije ima puno, od onih tradicionalnih na low level i high levele jezike, pa nadalje. Neki su slični, razlike su u sintaksi, nekim featurim-a, na primer C# i Java, a neki se razlikuju po paradigmi, C# Object Oriented, SQL je deklarativan. C se kompajlira, JavaScript interpretira. Svaki od ovih pristupa ima neke svoje prednosti i mane, ja sam u F#-u našao, možda i idealan alat, koji rešava neke klasične probleme, kao što su TypeSafe, Null exceptions,
+
 ' The language was originally designed and implemented by Don Syme, according to whom in the fsharp team, they say the F is for "Fun".
-' F# is a functional programming language that makes it easy to write correct and maintainable code.
+' F# is a functional first programming language that makes it easy to write correct and maintainable code.
 
 ' F# programming primarily involves defining types and functions that are type-inferred and generalized automatically. This allows your focus to remain on the problem domain and manipulating its data, rather than the details of programming.
 
@@ -127,8 +122,8 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 ### Why use F#
 
  * It's a part of .NET Core
+ * The tooling capabilities
  * The language itself is amazing
- * The tooling capabilities (IDE integration)
  * The F# community is great!
 
 ---
@@ -151,7 +146,25 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 
 ***
 
-### 2. The language itself is amazing
+### 2. Tooling
+
+* [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
+* Visual Studio
+* Visual Studio for Mac
+* JetBrains Rider
+
+' Ionide includes all the necessary features you’d find in a modern IDE - autocomplete, tooltips, document formatting, syntax and error highlighting, and many more.
+
+---
+
+<img src="images/ionide-fsharp.gif" style="background: transparent; border-style: none;"  />
+
+' F# Compiler Services
+' The F# compiler services package is a component derived from the F# compiler source code that exposes additional functionality for implementing F# language bindings, additional tools based on the compiler or refactoring tools. The package also includes F# interactive service that can be used for embedding F# scripting into your applications.
+
+***
+
+### 3. The language itself is amazing
 
 * Basics
  * F# interactive
@@ -168,35 +181,21 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 
 ### Basic demo
 
-* 1+2
+![Basic demo](images\1-concisenes.png "Basic F# demo")
 
 ---
 
 ### Hello world project
 
-* [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
 * dotnet new console -lang F#
-* F# console structure: Open, let, etc.
-* Build & publish
+
+![Hello world console](images\4-helloworld-fsproj.png "Hello world console")
 
 ---
 
 ### Domain modeling
 
 * Discriminated unions
-
-***
-
-### 3. Tooling
-
-* [VS Code](https://code.visualstudio.com/) + [Ionide](http://ionide.io/)
-* Visual Studio
-* Visual Studio for Mac
-* JetBrains Rider
-
----
-
-<img src="images/ionide-fsharp.gif" style="background: transparent; border-style: none;"  />
 
 ***
 
@@ -229,7 +228,7 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 
 ### Thanks to
 * [F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/)
-* [F# Software Foundation](https://fsharp.org)
+* [F# Software Foundation](https://fsharp.org)  
 * [How to (and not to) give a talk on F# by Ted Neward](http://blogs.tedneward.com/post/how-to-and-not-to-give-a-talk-on-f/)
 
 ' Thanks these guys for inspiring us
@@ -240,7 +239,12 @@ F# is a mature, open source, cross-platform, functional-first programming langua
 
 ### Checklist
 * It's a good idea to learn a new programming language
-* F# is a great choice
+* F# is a great choice  
+<br />
+* We haven't mentioned: Type providers, RoP, Computation Expressions, etc.
+
+
+' The F# core library defines three built-in computation expressions: Sequence Expressions, Asynchronous Workflows, and Query Expressions.
 
 ---
 

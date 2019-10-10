@@ -46,3 +46,7 @@ let getFolderSize =
     >> Seq.map (fileInfo >> fileSize)
     >> Seq.sum
     >> bytesToMB
+
+
+getFolderSize "."
+|> printfn "%A"
