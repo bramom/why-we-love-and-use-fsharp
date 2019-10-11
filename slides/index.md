@@ -177,12 +177,40 @@ F# is a functional first programming language that makes it easy to write correc
 * Composition
 * Correctness
 
+' F# is not cluttered up with coding “noise” such as curly brackets.
+' Many common programming tasks are much simpler in F#  
+' F# has a powerful type system which prevents many common errors such as null reference exceptions.  
+' Asynchronous programming is very easy, as is parallelism.
+' F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do.
+' F# is not cluttered up with coding “noise” such as curly brackets, semicolons and so on. You almost never have to specify the type of an object, thanks to a powerful type inference system. And, compared with C#, it generally takes fewer lines of code to solve the same problem.
+' Many common programming tasks are much simpler in F#. This includes things like creating and using complex type definitions, doing list processing, comparison and equality, state machines, and much more. Add because functions are first class objects, it is very easy to create powerful and reusable code by creating functions that have other functions as parameters, or that combine existing functions to create new functionality.
+' F# has a number of built-in libraries to help when more than one thing at a time is happening. Asynchronous programming is very easy, as is parallelism. F# also has a built-in actor model, and excellent support for event handling and functional reactive programming. And of course, because data structures are immutable by default, sharing state and avoiding locks is much easier.
+
 ---
 
 ### Conciseness
 
-![Basic demo](images\1-conciseness.png "Basic F# demo")
+```
+> 1 + 5;;
+val it : int = 6
+```
 
+```
+> let square x = x * x;;
+val square : x:int -> int
+```
+
+```
+> [1..100] |> List.sum |> printfn "sum=%d";;
+sum=5050
+val it : unit = ()
+```
+
+```
+type Person =
+    { First:string
+      Last:string }
+```
 ---
 
 ### Completness
@@ -191,12 +219,42 @@ F# is a functional first programming language that makes it easy to write correc
 
 ![Hello world console](images\4-helloworld-fsproj.png "Hello world console")
 
+' Although it is a functional language at heart, F# does support other styles which are not 100% pure, which makes it much easier to interact with the non-pure world of web sites, databases, other applications, and so on. In particular, F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do. Of course, F# is part of the .NET ecosystem, which gives you seamless access to all the third party .NET libraries and tools. It runs on most platforms, including Linux and smart phones (via Mono). Finally, it is well integrated with Visual Studio, which means you get a great IDE with IntelliSense support, a debugger, and many plug-ins for unit tests, source control, and other development tasks. Or on Linux, you can use the MonoDevelop IDE instead.
+
 ---
 
 #### Classes, imutability
 
+```
+let mutable counter = 0
+counter <- 4
+```
 
-![Classes](images\2-completness.png "Classes, mutability")
+```
+type IEnumerator<'a> =
+    abstract member Current : 'a
+    abstract MoveNext : unit -> bool
+```
+
+```
+// extension methods
+type System.Int32 with
+    member this.IsEven = this % 2 = 0
+
+(2).IsEven
+```
+
+---
+
+### Composition
+
+```
+let getFolderSize =
+    filesUnderFolder
+    >> Seq.map (fileInfo >> fileSize)
+    >> Seq.sum
+    >> bytesToMB
+```
 
 ---
 
@@ -210,6 +268,7 @@ F# is a functional first programming language that makes it easy to write correc
 ' Exhaustive pattern matching, which traps many common errors at compile time.
 ' A strict type system, which is your friend, not your enemy. You can use the static type checking almost as an instant “compile time unit test”.
 ' An expressive type system that can help you “make illegal states unrepresentable”* . We’ll see how to design a real-world example that demonstrates this.
+' F# has a powerful type system which prevents many common errors such as null reference exceptions. Values are immutable by default, which prevents a large class of errors. In addition, you can often encode business logic using the type system itself in such a way that it is actually impossible to write incorrect code or mix up units of measure, greatly reducing the need for unit tests.
 
 ---
 
@@ -222,6 +281,17 @@ type Option<'a> =       // use a generic definition
 
 ```
 
+---
+
+#### Domain modeling
+
+```
+type PaymentMethod =
+  | Cash
+  | Cheque of int
+  | Card of CardType * CardNumber
+
+```
 
 ***
 
@@ -281,34 +351,3 @@ type Option<'a> =       // use a generic definition
 https://azbooky.com  <br/>
 http://bug.rs  <br/>
 Thank you again
-
-
-<!-- # Five good reaseons why you should consider using F# for your next project
-
-
-* __Conciseness__  
-' F# is not cluttered up with coding “noise” such as curly brackets.
-
-* __Convenience__  
-' Many common programming tasks are much simpler in F#  
-
-* __Correctness__  
-' F# has a powerful type system which prevents many common errors such as null reference exceptions.  
-
-* __Concurrency__  
-' Asynchronous programming is very easy, as is parallelism.
-
-* __Completeness__  
-' F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do.
-
-[F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/why-use-fsharp/)
-
-' F# is not cluttered up with coding “noise” such as curly brackets, semicolons and so on. You almost never have to specify the type of an object, thanks to a powerful type inference system. And, compared with C#, it generally takes fewer lines of code to solve the same problem.
-
-' Many common programming tasks are much simpler in F#. This includes things like creating and using complex type definitions, doing list processing, comparison and equality, state machines, and much more. Add because functions are first class objects, it is very easy to create powerful and reusable code by creating functions that have other functions as parameters, or that combine existing functions to create new functionality.
-
-' F# has a powerful type system which prevents many common errors such as null reference exceptions. Values are immutable by default, which prevents a large class of errors. In addition, you can often encode business logic using the type system itself in such a way that it is actually impossible to write incorrect code or mix up units of measure, greatly reducing the need for unit tests.
-
-' F# has a number of built-in libraries to help when more than one thing at a time is happening. Asynchronous programming is very easy, as is parallelism. F# also has a built-in actor model, and excellent support for event handling and functional reactive programming. And of course, because data structures are immutable by default, sharing state and avoiding locks is much easier.
-
-' Although it is a functional language at heart, F# does support other styles which are not 100% pure, which makes it much easier to interact with the non-pure world of web sites, databases, other applications, and so on. In particular, F# is designed as a hybrid functional/OO language, so it can do virtually everything that C# can do. Of course, F# is part of the .NET ecosystem, which gives you seamless access to all the third party .NET libraries and tools. It runs on most platforms, including Linux and smart phones (via Mono). Finally, it is well integrated with Visual Studio, which means you get a great IDE with IntelliSense support, a debugger, and many plug-ins for unit tests, source control, and other development tasks. Or on Linux, you can use the MonoDevelop IDE instead. -->
