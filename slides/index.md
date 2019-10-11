@@ -166,26 +166,26 @@ F# is a functional first programming language that makes it easy to write correc
 
 ### 3. The language itself is amazing
 
-* Basics
- * F# interactive
- * Hello world
-* Domain modeling
-
----
-
-### The area it shines is?
-
 <img src="images/the_area_it_shines_is_programming.png" style="background: transparent; border-style: none;"  />
 
 ---
 
-### Basic demo
+### Demo
 
-![Basic demo](images\1-concisenes.png "Basic F# demo")
+* Conciseness
+* Completness
+* Composition
+* Correctness
 
 ---
 
-### Hello world project
+### Conciseness
+
+![Basic demo](images\1-conciseness.png "Basic F# demo")
+
+---
+
+### Completness
 
 * dotnet new console -lang F#
 
@@ -193,9 +193,35 @@ F# is a functional first programming language that makes it easy to write correc
 
 ---
 
-### Domain modeling
+#### Classes, imutability
 
-* Discriminated unions
+
+![Classes](images\2-completness.png "Classes, mutability")
+
+---
+
+### Correctness
+
+* Non-null types/classes
+* Immutable
+* Type system, strict and expressive
+
+' Immutability, which enables code to behave much more predictably.
+' Exhaustive pattern matching, which traps many common errors at compile time.
+' A strict type system, which is your friend, not your enemy. You can use the static type checking almost as an instant “compile time unit test”.
+' An expressive type system that can help you “make illegal states unrepresentable”* . We’ll see how to design a real-world example that demonstrates this.
+
+---
+
+#### Option type
+
+```
+type Option<'a> =       // use a generic definition
+   | Some of 'a         // valid value
+   | None               // missing
+
+```
+
 
 ***
 

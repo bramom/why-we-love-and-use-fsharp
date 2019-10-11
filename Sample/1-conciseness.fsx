@@ -1,5 +1,5 @@
-// F# interactive
-
+open System
+// F# interactive dotnet fsi
 // #help;;
 // #quit;;
 // <Alt> + Enter
@@ -29,14 +29,20 @@ printfn "sum=%d" (List.sum [1..100])
 [1..100] |> List.sum |> printfn "sum=%d"
 
 // simple types in one line
-type Person = {First:string; Last:string}
+type Person =
+    { First:string
+      Last:string }
 
 // type inference
-let jdoe = {First="John"; Last="Doe"}
+let jdoe =
+    { First="John"
+      Last="Doe" }
 
 // automatic equality and comparison
 let john = {First="John"; Last="Doe"}
 printfn "Equal? %A"  (jdoe = john)
+
+let isValid, result = Int32.TryParse("10")
 
 // easy composition of functions
 // Forward composition operator (>>), let (>>) f g x = g (f x)
