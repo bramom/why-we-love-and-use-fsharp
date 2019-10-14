@@ -281,6 +281,14 @@ type Option<'a> =       // use a generic definition
 
 ```
 
+```
+match o1 with
+| Some value ->
+    printfn "%d" value
+| None ->
+    printfn "No value"
+```
+
 ---
 
 #### Domain modeling
@@ -291,6 +299,16 @@ type PaymentMethod =
   | Cheque of int
   | Card of CardType * CardNumber
 
+```
+
+```
+match paymentMethod with
+| Cash ->
+    printfn "Paid in cash"
+| Cheque checkNo ->
+    printfn "Paid by cheque: %i" checkNo
+| Card (cardType,cardNo) ->
+    printfn "Paid with %A %A" cardType cardNo
 ```
 
 ***

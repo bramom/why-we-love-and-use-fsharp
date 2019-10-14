@@ -8,7 +8,7 @@ type PaymentMethod =
 
 let printPayment paymentMethod =
     match paymentMethod with
-    | Cash -> 
+    | Cash ->
         printfn "Paid in cash"
     | Cheque checkNo ->
         printfn "Paid by cheque: %i" checkNo
