@@ -18,7 +18,7 @@ Branimir Momčilović
 branimir.momcilovic@gmail.com  
 [azbooky software](https://azbooky.com/)  
 
-' Dolazim iz azbooky software, Beogradske softverske kuće. 2015 godine smo se okupili sa ciljem da razvijemo softversko rešenje za Američku Limo industriju. Što nam je i uspelo, naš dispatching sistem koristi jedan od najvećih prevoznika u NY, na istočnoj obali. Od početka smo koristi F# za gotovo sav backend razvoj, u početku sa idejom da ubrzamo razvoj PoC rešenja, ali nam se toliko svideo da smo i na dalje nastavili da koristimo F# i sve i više uključujemo tooling F# zajednice u naše projekte. Imamo dva veća projekta napisana u F#, dispatching i pripadajući servisi su na .NET framework-u 4.7 i rade na windows OS, a drugi projekat je deo za prihvatanje bukinga i on je .NET core, i radi na linuxu, tj. u dokeru.
+' Dolazim iz azbooky software, Beogradske softverske kuće. 2015 godine smo se okupili sa ciljem da razvijemo softversko rešenje za Američku Limo industriju. Što nam je i uspelo, naš dispatching sistem koristi jedan od najvećih prevoznika u NY, na istočnoj obali. Od početka smo koristili F# za gotovo sav backend razvoj, u početku sa idejom da ubrzamo razvoj PoC rešenja, ali nam se toliko svideo da smo i na dalje nastavili da koristimo F# i sve i više uključujemo tooling F# zajednice u naše projekte. Imamo dva veća projekta napisana u F#, dispatching i pripadajući servisi su na .NET framework-u 4.7 i rade na windows OS, to rešenje uključuje i android aplikaciju za vozače, takođe napisana u F# i Xamarin frameworku. Drugi projekat je deo za prihvatanje bukinga i on je .NET core, i radi na linuxu, tj. u dokeru.
 
 ***
 
@@ -84,12 +84,19 @@ Experiments have repeatedly shown that Asian children find it easier to learn to
 
 ### Why The Difference?
 
-The difference, says Dehaene, is how the words sound in your head. The Chinese words for the first nine numbers are all short, concise and bullet-like: "yi," "er," "san," "si," "wu," "liu," "qi," "ba," "jiu." He timed them and they average about a quarter of a second each.  
+The difference, says Dehaene, is how the words sound in your head.  
 
-In English we start with "one", "two", but "three" can stretch out a bit and "seven" is a real slower-downer, being two syllables long, so the English number-words take a little longer, a third of a second each.
+The Chinese words for the first nine numbers are all short, concise and bullet-like: "yi," "er," "san," "si," "wu," "liu," "qi," "ba," "jiu."
+
+In English we start with "one", "two", but "three" can stretch out a bit and "seven" is a real slower-downer.
+
 
 [Chinese (Mandarin) - Numbers (1-10)](
 https://l-lingo.com/free-lessons/en/learn-chinese-mandarin/numbers-1-10.html)
+
+' The Chinese words: He timed them and they average about a quarter of a second each.  
+' Sever is a real slower-downer, being two syllables long, so the English number-words take a little longer, a third of a second each.
+
 
 ---
 
@@ -272,6 +279,22 @@ let getFolderSize =
 
 ---
 
+---
+
+### Typing system
+
+* Function types
+* Tuples
+* Records
+* Unions
+
+' They are immutable
+' They cannot be null
+' They have built-in structural equality and comparison
+' They have built-in pretty printing
+
+---
+
 #### Option type
 
 ```
@@ -311,20 +334,6 @@ match paymentMethod with
     printfn "Paid with %A %A" cardType cardNo
 ```
 
----
-
-### Typing system
-
-* Function types
-* Tuples
-* Records
-* Unions
-
-' They are immutable
-' They cannot be null
-' They have built-in structural equality and comparison
-' They have built-in pretty printing
-
 ***
 
 ### 4. The F# community is great
@@ -354,17 +363,6 @@ match paymentMethod with
 
 ***
 
-### Thanks to
-* [F# for fun and profit by Scott Wlaschin](https://fsharpforfunandprofit.com/)
-* [F# Software Foundation](https://fsharp.org)  
-* [How to (and not to) give a talk on F# by Ted Neward](http://blogs.tedneward.com/post/how-to-and-not-to-give-a-talk-on-f/)
-
-' Thanks these guys for inspiring us
-
----
-
-***
-
 ### Checklist
 * It's a good idea to learn a new programming language
 * F# is a great choice  
@@ -373,6 +371,8 @@ match paymentMethod with
 
 
 ' The F# core library defines three built-in computation expressions: Sequence Expressions, Asynchronous Workflows, and Query Expressions.
+
+' Thanks these guys for inspiring us
 
 ---
 

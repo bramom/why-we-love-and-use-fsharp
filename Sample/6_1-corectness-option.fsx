@@ -4,7 +4,7 @@
 
 let o1: int Option = Some 42
 let ``oh no 😢``: int Option = None
-let o2 = Some 42
+let o2 = Some 7
 
 let areEqual = (o1=o2)
 
