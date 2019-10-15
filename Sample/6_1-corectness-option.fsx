@@ -2,7 +2,8 @@
 //    | Some of 'a           // valid value
 //    | None                 // missing
 
-let o1 = Some 42
+let o1: int Option = Some 42
+let ``oh no 😢``: int Option = None
 let o2 = Some 42
 
 let areEqual = (o1=o2)

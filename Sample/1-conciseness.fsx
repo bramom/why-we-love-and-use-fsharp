@@ -28,7 +28,8 @@ printfn "sum=%d" (List.sum [1..100])
 // Pipe-forward operator (|>), let (|>) x f = f x
 [1..100] |> List.sum |> printfn "sum=%d"
 
-// simple types in one line
+
+// Record type, simple types in one line
 type Person =
     { First:string
       Last:string }
@@ -41,6 +42,21 @@ let jdoe =
 // automatic equality and comparison
 let john = {First="John"; Last="Doe"}
 printfn "Equal? %A"  (jdoe = john)
+
+
+// Tuples
+let t = (42, "hello")
+
+let tupleFunction t =
+    let (id, name) = t
+    printfn "#%d name:%s" id name
+
+tupleFunction t
+
+let tupleFunctionSuffix (id, name) =
+    (id, name + "#")
+
+tupleFunctionSuffix t
 
 let isValid, result = Int32.TryParse("10")
 

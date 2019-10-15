@@ -13,7 +13,7 @@ printfn "%s" value
 type Email = private Email of string
     with
         static member Create s =
-            if System.Text.RegularExpressions.Regex.IsMatch(s,@"^\S+@\S+\.\S+$")
+            if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$")
                 then Email s
                 else invalidArg "s" "Invalid email adress"
         static member GetValue (Email e) = e

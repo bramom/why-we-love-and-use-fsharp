@@ -311,6 +311,20 @@ match paymentMethod with
     printfn "Paid with %A %A" cardType cardNo
 ```
 
+---
+
+### Typing system
+
+* Function types
+* Tuples
+* Records
+* Unions
+
+' They are immutable
+' They cannot be null
+' They have built-in structural equality and comparison
+' They have built-in pretty printing
+
 ***
 
 ### 4. The F# community is great
@@ -362,10 +376,22 @@ match paymentMethod with
 
 ---
 
+![Anketa](images\sinergija19-anketa.png "Anketa")
+
+---
+
 ### Thank you!
 
 * Questions?  
 <br />  
 https://azbooky.com  <br/>
 http://bug.rs  <br/>
-Thank you again
+
+---
+
+![Anketa](images\sinergija19-thankyou.png "Anketa")
+
+
+---
+
+
