@@ -1,0 +1,179 @@
+{
+	// Place your why-we-love-and-use-fsharp workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Single choice union type": {
+		"scope": "fsharp",
+		"prefix": "s11",
+		"body": [
+			"type CardType = CardType of string"
+		],
+		"description": "Single choice union type"
+	},
+	"Single choice union type construct": {
+		"scope": "fsharp",
+		"prefix": "s12",
+		"body": [
+			"let cardType = CardType \"VISA\""
+		],
+		"description": "Single choice union type"
+	},
+	"Single choice union type print": {
+		"scope": "fsharp",
+		"prefix": "s13",
+		"body": [
+			"printfn \"%A\" cardType"
+		],
+		"description": "Single choice union type print"
+	},
+	"Single choice union type deconstruct": {
+		"scope": "fsharp",
+		"prefix": "s14",
+		"body": [
+			"let (CardType ct) = cardType"
+		],
+		"description": "Single choice union type deconstruct"
+	},
+	"Single choice union type print card type": {
+		"scope": "fsharp",
+		"prefix": "s15",
+		"body": [
+			"printfn \"%s\" ct"
+		],
+		"description": "Single choice union type print card type"
+	},
+	"Single choice union type is not a string": {
+		"scope": "fsharp",
+		"prefix": "s16",
+		"body": [
+			"cardType + \"\""
+		],
+		"description": "Single choice union type is not an int"
+	},
+	"CardNumber": {
+		"scope": "fsharp",
+		"prefix": "s17",
+		"body": [
+			"type CardNumber = CardNumber of string"
+		],
+		"description": "CardNumber"
+	},
+	"Card tuple": {
+		"scope": "fsharp",
+		"prefix": "s21",
+		"body": [
+			"let card = (CardType \"Master\", CardNumber \"5555 5555 5555 4444\")"
+		],
+		"description": "Card tuple"
+	},
+	"Card print": {
+		"scope": "fsharp",
+		"prefix": "s22",
+		"body": [
+			"let printCard (CardType cardType, CardNumber cardNumber) =\n\tprintfn \"%s %s\" (cardType.ToUpper()) cardNumber"
+		],
+		"description": "Card tuple"
+	},
+	"Card call print": {
+		"scope": "fsharp",
+		"prefix": "s23",
+		"body": [
+			"printCard card"
+		],
+		"description": "Card tuple"
+	},
+	"Payment type 1": {
+		"scope": "fsharp",
+		"prefix": "s31",
+		"body": [
+			"type PaymentMethod = \n\t| Cash\n\t| Card of CardType * CardNumber"
+		],
+		"description": "Payment type 1"
+	},
+	"Print payment type": {
+		"scope": "fsharp",
+		"prefix": "s32",
+		"body": [
+			"let printPayment paymentMethod =\n\tmatch paymentMethod with\n\t| Cash ->\n\t\tprintfn \"(Cash)\"\n\t| Card (CardType cardType, CardNumber cardNumber) ->\n\t\tprintfn \"(%s '%s')\" cardType cardNumber"
+		],
+		"description": "Print payment type"
+	},
+	"Print cash": {
+		"scope": "fsharp",
+		"prefix": "s33",
+		"body": [
+			"printPayment Cash"
+		],
+		"description": "Print cash"
+	},
+	"Print card": {
+		"scope": "fsharp",
+		"prefix": "s34",
+		"body": [
+			"printPayment (Card card)"
+		],
+		"description": "Print cash"
+	},
+	"Pattern matching": {
+		"scope": "fsharp",
+		"prefix": "s35",
+		"body": [
+			"//Exhaustive pattern matching | Check of int"
+		],
+		"description": "Pattern matching"
+	},
+	"Record type Order": {
+		"scope": "fsharp",
+		"prefix": "s41",
+		"body": [
+			"type Order =\n\t{ OrderNo: int //OrderNumber?\n\t  PaymentMethod: PaymentMethod option\n\t  Note: string option }"
+		],
+		"description": "Record type"
+	},
+	"Define order": {
+		"scope": "fsharp",
+		"prefix": "s42",
+		"body": [
+			"let order1 = { OrderNo = 1; PaymentMethod = Some (Check 10); Note = None }"
+		],
+		"description": "Define order"
+	},
+	"Print order": {
+		"scope": "fsharp",
+		"prefix": "s43",
+		"body": [
+			"printfn \"%A\" order1"
+		],
+		"description": "Define order"
+	},
+	"Define order 2": {
+		"scope": "fsharp",
+		"prefix": "s44",
+		"body": [
+			"let order2 = { OrderNo = 1; PaymentMethod = Some (Check 10); Note = None }"
+		],
+		"description": "Define order"
+	},
+	"Define order 3": {
+		"scope": "fsharp",
+		"prefix": "s45",
+		"body": [
+			"let order3 = { order2 with Note = Some \"note\" } "
+		],
+		"description": "Define order"
+	},
+}

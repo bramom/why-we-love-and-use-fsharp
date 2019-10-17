@@ -215,8 +215,8 @@ val it : unit = ()
 
 ```
 type Person =
-    { First:string
-      Last:string }
+    { FirstName: string
+      LastName: string }
 ```
 ---
 
@@ -319,7 +319,7 @@ match o1 with
 ```
 type PaymentMethod =
   | Cash
-  | Cheque of int
+  | Check of int
   | Card of CardType * CardNumber
 
 ```
@@ -328,8 +328,8 @@ type PaymentMethod =
 match paymentMethod with
 | Cash ->
     printfn "Paid in cash"
-| Cheque checkNo ->
-    printfn "Paid by cheque: %i" checkNo
+| Check checkNo ->
+    printfn "Paid by Check: %i" checkNo
 | Card (cardType,cardNo) ->
     printfn "Paid with %A %A" cardType cardNo
 ```
