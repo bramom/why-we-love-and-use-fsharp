@@ -270,6 +270,7 @@ let getFolderSize =
 * Non-null types/classes
 * Immutable
 * Type system, strict and expressive
+* Exhaustive pattern matching
 
 ' Immutability, which enables code to behave much more predictably.
 ' Exhaustive pattern matching, which traps many common errors at compile time.
