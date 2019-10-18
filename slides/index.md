@@ -386,6 +386,7 @@ match paymentMethod with
 * Questions?  
 <br />  
 https://azbooky.com  <br/>
+https://github.com/bramom/why-we-love-and-use-fsharp <br />
 http://bug.rs  <br/>
 
 ---
