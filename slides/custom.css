@@ -4,6 +4,10 @@
     background-repeat: no-repeat;
 } */
 
+body, html {
+    background-color: black;
+}
+
 div.slides {
     background-image: url("../images/sinergija19.png");
     background-position: left bottom;
